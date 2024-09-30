@@ -1,0 +1,277 @@
+	<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P4-M06.5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .banner .title {
+            font-size: 1.2em;
+            display: flex;
+            justify-content: space-between;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 5px;
+            border-top: 1px solid white;
+            padding-top: 5px;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .section {
+            margin-bottom: 15px;
+        }
+        .step-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .dialogue {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            font-style: italic;
+        }
+    </style>
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+
+        function updateActivities() {
+            var selectedTime = document.getElementById('time-select').value;
+            document.getElementById('selected-time').innerText = "Tiempo efectivo de clase: " + selectedTime + " minutos";
+
+            // Mostrar todas las actividades al inicio
+            document.getElementById('actividad2').style.display = 'block';
+            document.getElementById('actividad4-paso5').style.display = 'block';
+
+            if (selectedTime === '45') {
+                document.getElementById('actividad2').style.display = 'none'; // Eliminar Actividad 2
+            } else if (selectedTime === '40') {
+                document.getElementById('actividad2').style.display = 'none'; // Eliminar Actividad 2
+                document.getElementById('actividad4-paso5').style.display = 'none'; // Eliminar Paso 5 de la Actividad 4
+            }
+        }
+    </script>
+</head>
+<body onload="updateActivities()">
+
+<div class="header">
+    <h1>Playbook-P4-M06.5</h1>
+</div>
+
+<div class="container">
+    <div class="dropdown">
+        <label for="time-select">Tiempo efectivo de Clase:</label>
+        <select id="time-select" onchange="updateActivities()">
+            <option value="50">50 minutos</option>
+            <option value="45">45 minutos</option>
+            <option value="40">40 minutos</option>
+        </select>
+    </div>
+
+    <h2 id="selected-time">Tiempo efectivo de clase: 50 minutos</h2>
+
+<!-- Actividad 0: Revisión de Misión -->
+<div class="banner" onclick="toggleContent('actividad0')">
+    <div class="title">
+        <span>📚 Actividad 0: Revisión de Misión</span>
+        <span>⏰ Tiempo: N/A</span>
+    </div>
+    <div class="subtitle">Revisar los materiales antes de comenzar</div>
+</div>
+<div id="actividad0" class="content">
+    <div class="section">
+        <div class="step-title">Paso 1: Proyectar Diapositiva 1 "Materiales y Preparación"</div>
+        <div class="dialogue">N/A</div>
+    </div>
+</div>
+<!-- Actividad 1: Saludo y Ritual Gnius Club -->
+<div class="banner" onclick="toggleContent('actividad1')">
+    <div class="title">
+        <span>📚 Actividad 1: Saludo y Ritual Gnius Club</span>
+        <span>⏰ Tiempo: 2.5 minutos</span>
+    </div>
+    <div class="subtitle">Dar la bienvenida y establecer el tono de la clase</div>
+</div>
+<div id="actividad1" class="content">
+    <div class="section">
+        <div class="step-title">Paso 1 (0.5 minutos): Proyectar Diapositiva 2 "Saludo y Ritual Gnius Club"</div>
+        <div class="dialogue">"¡Hola, Genios! 🌟 ¿Están listos para una nueva misión? Hoy vamos a trabajar en un proyecto muy divertido: ¡vamos a programar nuestro Microbit para jugar papa caliente! ¡Va a ser una aventura emocionante!"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 2 (0.5 minutos): Proyectar Diapositiva 3 "Estado de Ánimo"</div>
+        <div class="dialogue">"Antes de empezar, quiero saber cómo se sienten hoy. Si están llenos de energía, levanten ambos brazos; si necesitan más tiempo para concentrarse, crucen los brazos frente a su pecho. ¡Vamos a ver cómo está la energía en esta sala!"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 3 (0.5 minutos): Proyectar Diapositiva 4 "Ritual de Agradecimiento"</div>
+        <div class="dialogue">"Ahora, vamos a juntar nuestras manos y dar las gracias por lo que vamos a aprender hoy. ¡Gracias por estar aquí, Genios! Hoy va a ser un gran día de aprendizaje y diversión."</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 4 (1 minuto): Proyectar Diapositiva 5 "Objetivos de la Misión"</div>
+        <div class="dialogue">"Hoy tenemos dos grandes objetivos: 1) Preparar nuestro programa con paper programming. 2) Hacer el juego de la papa caliente ¡Será una misión emocionante!"</div>
+    </div>
+</div>
+<!-- Actividad 2: State Change -->
+<div class="banner" onclick="toggleContent('actividad2')">
+    <div class="title">
+        <span>📚 Actividad 2: State Change</span>
+        <span>⏰ Tiempo: 3 minutos</span>
+    </div>
+    <div class="subtitle">Ejercicio de activación mental para preparar la programación</div>
+</div>
+<div id="actividad2" class="content">
+    <div class="section">
+        <div class="step-title">Paso 1 (0.5 minutos): Proyectar Diapositiva 6 "State Change"</div>
+        <div class="dialogue">"¡Genios, es momento de activar nuestras mentes! Hoy vamos a entrenar nuestra lógica para programar el juego de papa caliente. ¿Listos para ponernos en modo programación?"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 2 (1 minuto): Proyectar Diapositiva 7 "Instrucciones: Programa a tu compañero"</div>
+        <div class="dialogue">"Imagina que eres un temporizador del Microbit, y tu compañero te da instrucciones para contar regresivamente, paso a paso. El reto es ser muy claros en las instrucciones, como si estuvieran programando. ¡Cambien de roles después de cada intento!"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 3 (1 minuto): Proyectar Diapositiva 8 "¿Qué pasó?"</div>
+        <div class="dialogue">"¿Qué les pareció ser un temporizador? ¿Fueron claras las instrucciones de su compañero? En la programación, si un paso está mal, el resultado no será el esperado. ¡Así que tenemos que ser muy precisos!"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 4 (0.5 minutos): Sin diapositiva, solo diálogo del profesor</div>
+        <div class="dialogue">"Programar un temporizador es como darle instrucciones paso a paso a un robot. Si falta algo o no es claro, el temporizador no funcionará como queremos. ¡Es importante ser precisos, tal como hicimos con nuestros compañeros!"</div>
+    </div>
+</div>
+<!-- Actividad 3: Challenge -->
+<div class="banner" onclick="toggleContent('actividad3')">
+    <div class="title">
+        <span>📚 Actividad 3: Challenge</span>
+        <span>⏰ Tiempo: 28.5 minutos</span>
+    </div>
+    <div class="subtitle">Programar el juego de papa caliente</div>
+</div>
+<div id="actividad3" class="content">
+    <div class="section">
+        <div class="step-title">Paso 1 (0.5 minutos): Proyectar Diapositiva 9 "Challenge: Programar el Juego de Papa Caliente"</div>
+        <div class="dialogue">"¡Genios, es hora de nuestro reto! Vamos a programar el Microbit para jugar papa caliente. El temporizador contará regresivamente y cuando el tiempo se acabe, el Microbit hará algo especial, como mostrar un ícono o reproducir un sonido. ¡Listos para el desafío!"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 2 (1 minuto): Indicar que los estudiantes deben recoger las Magic Tablets</div>
+        <div class="dialogue">"Ahora, un representante de cada equipo pasará al frente a recoger una Magic Tablet. Tienen 1 minuto para hacerlo. ¡Vamos a recogerlas y prepararnos para diseñar nuestro juego!"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 3 (1 minuto): Proyectar Diapositiva 10 "Temporizador de 1 minuto"</div>
+        <div class="dialogue">"Tienen 1 minuto para recoger las Magic Tablets y organizarse. ¡El tiempo empieza ahora!"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 4 (10 minutos): Proyectar Diapositiva 11 "Paper Programming: Diseño del Juego de Papa Caliente"</div>
+        <div class="dialogue">"Ahora usen las Magic Tablets para diseñar el juego. Dibujen cómo funcionará el temporizador y qué hará el Microbit cuando el tiempo se acabe. ¡Tienen 10 minutos para diseñarlo!"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 5 (10 minutos): Proyectar Diapositiva 12 "Programar el Juego de Papa Caliente"</div>
+        <div class="dialogue">"Ahora que han diseñado su juego, vamos a programarlo en MakeCode. Configuren el temporizador para contar regresivamente y añadan una señal para cuando el tiempo se agote. ¡Vamos a programar!"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 6 (5 minutos): Proyectar Diapositiva 13 "Prueba del Juego de Papa Caliente"</div>
+        <div class="dialogue">"¡Tiempo de prueba! Hagan clic en la bandera verde y vean si su juego funciona como lo planearon. Si no, vuelvan al código y ajusten lo necesario."</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 7 (0.5 minutos): Proyectar Diapositiva 14 "Revisión de Objetivos"</div>
+        <div class="dialogue">"Genios, hemos terminado el reto de la misión. ¡Revise sus proyectos y asegúrense de que el temporizador y el juego funcionan correctamente!"</div>
+    </div>
+</div>
+<!-- Actividad 4: Team Gnius -->
+<div class="banner" onclick="toggleContent('actividad4')">
+    <div class="title">
+        <span>📚 Actividad 4: Team Gnius</span>
+        <span>⏰ Tiempo: 11 minutos</span>
+    </div>
+    <div class="subtitle">Colaborar en equipos para implementar el juego de papa caliente</div>
+</div>
+<div id="actividad4" class="content">
+    <div class="section">
+        <div class="step-title">Paso 1 (0.5 minutos): Proyectar Diapositiva 15 "Formación de Equipos"</div>
+        <div class="dialogue">"¡Genios, vamos a trabajar en equipos de 2! Uno programará el Microbit mientras el otro observa y da retroalimentación. Luego intercambiarán roles. ¡Vamos a formar los equipos!"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 2 (0.5 minutos): Indicar que los estudiantes deben recoger los Microbits</div>
+        <div class="dialogue">"Ahora, un integrante de cada pareja pasará a recoger un Microbit. ¡Recuerden ayudarse entre sí para implementar el juego de papa caliente!"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 3 (0.5 minutos): Proyectar Diapositiva 16 "Temporizador de 30 segundos"</div>
+        <div class="dialogue">"Tienen 30 segundos para recoger los Microbits y prepararse. ¡El tiempo corre, Genios!"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 4 (5 minutos): Proyectar Diapositiva 17 "Implementación del Juego de Papa Caliente"</div>
+        <div class="dialogue">"Es momento de transferir su código al Microbit. Si alguno de ustedes no terminó, este es el momento para apoyarse mutuamente y completar el código. ¡Manos a la obra!"</div>
+    </div>
+    <div class="section" id="actividad4-paso5">
+        <div class="step-title">Paso 5 (5 minutos): Proyectar Diapositiva 18 "Aplicaciones de los Temporizadores en Juegos"</div>
+        <div class="dialogue">"Una vez que su juego esté funcionando, piensen en otras situaciones donde podrían usar un temporizador en los juegos. Anoten sus ideas en sus Magic Tablets. Tienen 5 minutos."</div>
+    </div>
+</div>
+<!-- Actividad 5: Honor de Dojo -->
+<div class="banner" onclick="toggleContent('actividad5')">
+    <div class="title">
+        <span>📚 Actividad 5: Honor de Dojo</span>
+        <span>⏰ Tiempo: 5 minutos</span>
+    </div>
+    <div class="subtitle">Reconocimiento de logros y cierre de la sesión</div>
+</div>
+<div id="actividad5" class="content">
+    <div class="section">
+        <div class="step-title">Paso 1 (1 minuto): Proyectar Diapositiva 19 "Logros del Día"</div>
+        <div class="dialogue">"Genios, antes de terminar, repasemos lo que logramos hoy. ¡Hemos programado un juego interactivo de papa caliente con temporizador! ¡Gran trabajo, misión cumplida!"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 2 (1 minuto): Sin diapositiva, solo agradecimiento por el esfuerzo</div>
+        <div class="dialogue">"Hoy todos ustedes trabajaron muy bien. ¡Su habilidad para programar y colaborar fue impresionante! ¡Gran trabajo, equipo!"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 3 (1.5 minutos): Felicitar al grupo por el esfuerzo y la creatividad</div>
+        <div class="dialogue">"Genios, quiero saber qué fue lo que más les gustó del reto de hoy. ¿Quién quiere compartir su experiencia? ¡Es increíble ver todo lo que lograron!"</div>
+    </div>
+    <div class="section">
+        <div class="step-title">Paso 4 (1.5 minutos): Proyectar Diapositiva 20 "Honor de Dojo: Ordenando"</div>
+        <div class="dialogue">"Antes de irnos, recuerden que ser Genios también significa cuidar nuestro entorno. Vamos a recoger las Magic Tablets, los Microbits y asegurarnos de que todo quede en orden para la próxima misión."</div>
+    </div>
+</div>
+</div> <!-- Cierre del container -->
+
+    <!-- Scripts adicionales si es necesario -->
+    <script>
+        // Agregar scripts adicionales aquí si es necesario
+    </script>
+
+    </body>
+    </html>
